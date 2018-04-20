@@ -15,5 +15,6 @@ def login(request):
     else:
         return
 
+
 def tables(requests):
-    return render(requests, "table.html")
+    return render(requests, "tables.html")

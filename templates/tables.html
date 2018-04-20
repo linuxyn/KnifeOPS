@@ -11,7 +11,23 @@
 {% block content %}
 <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Data Table With Full Features</h3>
+{#      <h3 class="box-title">Data Table With Full Features</h3>#}
+{#    </div>#}
+    <!-- Dropdown -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-info">Action</button>
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Add</a></li>
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
