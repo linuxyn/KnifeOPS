@@ -20,5 +20,7 @@ from django.contrib import admin
 #     url(r'^admin/', admin.site.urls),
 # ]
 urlpatterns = [
-    url(r'auth/', include("auth.urls")),
+    url(r'login/', include("login.urls")),
+    url(r'dashboard/', include("dashboard.urls")),
+    url(r'^$', include("minions.urls")),
     ]
