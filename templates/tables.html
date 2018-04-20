@@ -2,6 +2,7 @@
 {% block css %}
     <link rel="stylesheet" href="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 {% endblock %}
 {% block page_header %}Dashboard{% endblock %}
 {% block optionnal_description %}minion status{% endblock %}
@@ -471,9 +472,28 @@
     <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/fastclick/lib/fastclick.js"></script>
     <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/dist/js/demo.js"></script>
     <script>
-    $(function () {
-        $('#example1').DataTable();
-    });
+{#    $(function () {#}
+{#        $('#example1').DataTable();#}
+{#    });#}
+
+// datatables响应式
+    $(document).ready(function() {
+        var table = $('#example1').DataTable( {
+        "scrollY": "370px",
+        "paging": true
+    } );
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+        } );
+    } );
+
    $("table").find('tr').each(function () {
        console.log("start log");
        var content = $(this).find("td").eq(4).text();
@@ -496,6 +516,5 @@
            $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
        }
    });
-
     </script>
 {% endblock %}
