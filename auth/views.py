@@ -14,3 +14,6 @@ def login(request):
         return render(request, "starter.html", {"username": username, "role": "ops_dev"})
     else:
         return
+
+def tables(requests):
+    return render(requests, "table.html")
