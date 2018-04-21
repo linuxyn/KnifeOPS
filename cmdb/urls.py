@@ -7,4 +7,5 @@ from cmdb import views
 
 urlpatterns = [
     url(r'hosts/', views.hosts, name="hosts"),
+    url(r'group/', views.group, name="group"),
 ]
