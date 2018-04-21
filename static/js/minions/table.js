@@ -20,26 +20,26 @@ $(function () {
         } );
     } );
 
-   $("table").find('tr').each(function () {
-       console.log("start log");
-       var content = $(this).find("td").eq(4).text();
-       $(this).find("td").eq(4).text("");
-       var label_tag = "";
-       if(content=="A"){
-           label_tag = "label-success";
-           $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
-       console.log("content-->", content)}
-       else if(content=="C"){
-           label_tag = "label-danger";
-           $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
-       }
-       else if(content=="X"){
-           label_tag = "label-info";
-           $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
-       }
-       else {
-           label_tag = "label-warning";
-           $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
-       }
-   });
+   // $("table").find('tr').each(function () {
+   //     console.log("start log");
+   //     var content = $(this).find("td").eq(4).text();
+   //     $(this).find("td").eq(4).text("");
+   //     var label_tag = "";
+   //     if(content=="A"){
+   //         label_tag = "label-success";
+   //         $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
+   //     console.log("content-->", content)}
+   //     else if(content=="C"){
+   //         label_tag = "label-danger";
+   //         $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
+   //     }
+   //     else if(content=="X"){
+   //         label_tag = "label-info";
+   //         $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
+   //     }
+   //     else {
+   //         label_tag = "label-warning";
+   //         $(this).find("td").eq(4).append('<span></span>').addClass("label").addClass(label_tag).text(content);
+   //     }
+   // });
 })
