@@ -15,12 +15,12 @@ class Host(models.Model):
     OS = models.CharField(max_length=128, null=True)
     product_model = models.CharField(max_length=128, null=True)
     minions_status = models.CharField(max_length=32, null=True, default="undefined")
-    business = models.ForeignKey("Business")
+    group = models.ForeignKey("Group")
     room = models.ForeignKey("Room")
 
 
-class Business(models.Model):
-    """业务线信息"""
+class Group(models.Model):
+    """主机组信息"""
     name = models.CharField(max_length=64)
     describe = models.CharField(max_length=128, null=True)
 
@@ -28,6 +28,4 @@ class Business(models.Model):
 class Room(models.Model):
     """机房信息表"""
     name = models.CharField(max_length=128)
-    detail = models.CharField(max_length=256,null=True)
-
-
+    detail = models.CharField(max_length=256, null=True)

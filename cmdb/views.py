@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def hosts(requests):
-    return render(requests, "minions/hosts.html")
+    return render(requests, "cmdb/hosts.html")

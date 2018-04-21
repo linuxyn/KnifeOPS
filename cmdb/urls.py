@@ -3,7 +3,7 @@
 
 from django.conf.urls import url
 from django.contrib import admin
-from minions import views
+from cmdb import views
 
 urlpatterns = [
     url(r'hosts/', views.hosts, name="hosts"),
