@@ -22,5 +22,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'login/', include("login.urls")),
     url(r'dashboard/', include("dashboard.urls")),
-    url(r'^$', include("minions.urls")),
+    url(r'minions/', include("minions.urls")),
     ]

@@ -6,5 +6,5 @@ from django.contrib import admin
 from minions import views
 
 urlpatterns = [
-    url(r'^$', views.tables, name="tables"),
+    url(r'hosts/', views.hosts, name="hosts"),
 ]

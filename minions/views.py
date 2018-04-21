@@ -3,5 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def tables(requests):
-    return render(requests, "minions/tables.html")
+def hosts(requests):
+    return render(requests, "minions/hosts.html")

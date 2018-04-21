@@ -11,7 +11,7 @@ def login(request):
         username = email.split("@")[0]
         password = request.POST.get("password")
         print(email, password)
-        return redirect("/")
+        return redirect("/minions/hosts")
         # return render(request, "starter.html", {"username": username, "role": "ops_dev"})
     else:
         return

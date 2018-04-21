@@ -1,0 +1,183 @@
+{% extends "template.html" %}
+{% block css %}
+    <link rel="stylesheet" href="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+{% endblock %}
+{% block page_header %}Dashboard{% endblock %}
+{% block optionnal_description %}minion status{% endblock %}
+{% block level %}
+    <li class="active">minions</li>
+{% endblock %}
+{% block content %}
+<div class="box">
+    <div class="box-header">
+{#      <h3 class="box-title">Data Table With Full Features</h3>#}
+{#    </div>#}
+    <!-- Dropdown -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-info">Action</button>
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+          <!-- 单击弹出模态对话框 -->
+        <li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="Host Information">Add</a>
+{#        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Add</button>#}
+
+        </li>
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+    <!-- 模态对话框开始 -->
+{#        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>#}
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">Hostname</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                </div>
+
+                <div class="form-group">
+                    <label>Minimal</label>
+                    <select class="form-control select2" style="width: 100%;">
+                        <option selected="selected">Alabama</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                    </select>
+              </div>
+                <!-- /.form-group -->
+              <div class="form-group">
+                    <label>Disabled</label>
+                    <select class="form-control select2" disabled="disabled" style="width: 100%;">
+                        <option selected="selected">Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                    </select>
+              </div>
+
+                <div class="form-group">
+                <label>Multiple</label>
+                <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                        style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
+
+                <!-- /.form-group -->
+              <div class="form-group">
+                <label>Disabled Result</label>
+                <select class="form-control select2" style="width: 100%;">
+                  <option selected="selected">Alabama</option>
+                  <option>Alaska</option>
+                  <option disabled="disabled">California (disabled)</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
+              <!-- /.form-group -->
+
+ <!--             <div class="form-group">
+                <label for="message-text" class="control-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+-->
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 模态对话框结束 -->
+    <table id="example1" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Serial number</th>
+      <th>Hostname</th>
+      <th>IP</th>
+      <th>Minions status</th>
+      <th>Operate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Trident</td>
+      <td>Internet
+        Explorer 4.0
+      </td>
+      <td>Win 95+</td>
+      <td> 4</td>
+      <td>detail</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th>Serial number</th>
+      <th>Hostname</th>
+      <th>IP</th>
+      <th>Minions status</th>
+      <th>Operate</th>
+    </tr>
+    </tfoot>
+    </table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="/static/AdminLTE-2.4.2/AdminLTE-2.4.2/dist/js/demo.js"></script>
+    <script src="/static/js/minions/table.js"></script>
+{#    $(function () {#}
+{#        $('#example1').DataTable();#}
+{#    });#}
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('Add ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+        });
+    </script>
+{% endblock %}

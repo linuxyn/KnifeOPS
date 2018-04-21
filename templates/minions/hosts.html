@@ -22,7 +22,8 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#" data-toggle="modal" data-target="#exampleModal">Add</a>
+          <!-- 单击弹出模态对话框 -->
+        <li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="Host Information">Add</a>
 {#        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Add</button>#}
 
         </li>
@@ -47,47 +48,57 @@
           </div>
           <div class="modal-body">
             <form>
-
-
-              <div class="form-group">
-                <label for="recipient-name" class="control-label">Recipient:</label>
-                <input type="text" class="form-control" id="recipient-name">
-              </div>
-
-              <div class="form-group">
-                <label for="message-text" class="control-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-
+                <div class="form-group">
+                    <label for="hostname" class="control-label">Hostname</label>
+                    <input type="text" class="form-control" id="hostname">
+                </div>
+                <div class="form-group">
+                    <label for="ip" class="control-label">IP</label>
+                    <input type="text" class="form-control" id="ip">
+                </div>
+                <div class="form-group">
+                    <label for="mem" class="control-label">Mem</label>
+                    <input type="text" class="form-control" id="mem">
+                </div>
+                <div class="form-group">
+                    <label for="disk" class="control-label">Disk</label>
+                    <input type="text" class="form-control" id="disk">
+                </div>
+                <div class="form-group">
+                    <label for="OS" class="control-label">OS</label>
+                    <input type="text" class="form-control" id="OS">
+                </div>
+                <div class="form-group">
+                    <label for="cpu_model" class="control-label">Cpu_Model</label>
+                    <input type="text" class="form-control" id="cpu_model">
+                </div>
+                <div class="form-group">
+                    <label for="cpu_core" class="control-label">Cpu_Core</label>
+                    <input type="text" class="form-control" id="cpu_core">
+                </div>
+                <div class="form-group">
+                    <label for="cabinet" class="control-label">Cabinet</label>
+                    <input type="text" class="form-control" id="cabinet">
+                </div>
+                <div class="form-group">
+                    <label for="product_model" class="control-label">Product_Model</label>
+                    <input type="text" class="form-control" id="product_model">
+                </div>
 
                 <div class="form-group">
-                <label>Minimal</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
-              </div>
-                <!-- /.form-group -->
+                    <label>Room</label>
+                    <select class="form-control select2" style="width: 100%;">
+                        <option selected="selected">Alabama</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                    </select>
+                </div>
               <div class="form-group">
-                <label>Disabled</label>
-                <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
-              </div>
-
-                <div class="form-group">
-                <label>Multiple</label>
+                <label>Business</label>
                 <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
                         style="width: 100%;">
                   <option>Alabama</option>
@@ -102,19 +113,17 @@
 
                 <!-- /.form-group -->
               <div class="form-group">
-                <label>Disabled Result</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option disabled="disabled">California (disabled)</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
+                    <label>Minion_Status</label>
+                    <select class="form-control select2" disabled="disabled" style="width: 100%;">
+                        <option selected="selected">Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                    </select>
               </div>
-              <!-- /.form-group -->
-
 
             </form>
           </div>
@@ -144,7 +153,7 @@
       </td>
       <td>Win 95+</td>
       <td> 4</td>
-      <td>detail</td>
+      <td>detail delete</td>
     </tr>
     </tbody>
     <tfoot>
@@ -178,9 +187,8 @@
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
-        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-title').text('Add ' + recipient)
         modal.find('.modal-body input').val(recipient)
         });
-
     </script>
 {% endblock %}

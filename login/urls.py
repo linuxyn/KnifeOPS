@@ -6,5 +6,4 @@ from login import views
 
 urlpatterns = [
     url(r'^$', views.login, name="login"),
-    # url(r'^tables/', views.tables, name="tables"),
 ]

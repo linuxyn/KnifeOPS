@@ -262,7 +262,7 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -270,8 +270,21 @@ desired effect
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> minions</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> service status</a></li>
+            <li class="active"><a href="/dashboard"><i class="fa fa-circle-o"></i> knifeOPS status</a></li>
+            <li><a href="/dashboard"><i class="fa fa-circle-o"></i> service status</a></li>
+          </ul>
+        </li>
+
+        <li class="active treeview">
+          <a href="#"><i class="fa fa-server"></i> <span>Minions</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/minions/hosts">host information</a></li>
+            <li><a href="#">room information</a></li>
+            <li><a href="#">business information</a></li>
           </ul>
         </li>
         <!-- Optionally, you can add icons to the links -->
